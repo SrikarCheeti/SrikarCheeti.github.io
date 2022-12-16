@@ -1,24 +1,24 @@
-```python
+```markdown
 ## Introduction
 
 # Rocket League is an online multiplayer game, which can be described with 2 words, "Car Soccer". There are multiple modes, with varying differences such as
-# different balls, or team sizes, however for the purpose of this project we will focus on the standard 3v3 mode, which is also the mode professional 
+# different balls, or team sizes, however for the purpose of this project we will focus on the standard 3v3 mode, which is also the mode professional
 # Rocket League is played. The game is played like soccer, where the ball starts in the middle, however each team will get the ability to move at the same
 # time and will be placed equally far from the ball. The two major mechanics to Rocket League is boosting and jumping, a mechanic is something the player
-# can do in the game to gain an advantage. If the player's car has all 4 wheels touching the ground, the player is able to jump, for a short time while 
+# can do in the game to gain an advantage. If the player's car has all 4 wheels touching the ground, the player is able to jump, for a short time while
 # in the air, they are able to flip in any direction they want. This mechanic provides a speed increase, by repeated flipping in the desired direction,
 # over just driving. The second mechanic is boosting, which can be understood very easily with the words,"Rocket Booster". This is essentially what boosting is,
 # the player has a capacity of 100 boost, and by clicking a button they activate a booster on the back of their car that pushes them forwards.
 # As they use boost, they continuously loose it from their capacity, they can regain boost by driving over boost pads placed around the field.
 # Just like soccer, the team that scores the most wins, this can be done through good defense or dominant offense.
-# If the game is tied at the end of the game, the game goes to overtime, where the next team to score wins. There are some more complicated mechanics, and 
-# play styles, however this is the base of the game. RLCS stands for Rocket League Championship Series, throughout this project RLCS refers to professional 
+# If the game is tied at the end of the game, the game goes to overtime, where the next team to score wins. There are some more complicated mechanics, and
+# play styles, however this is the base of the game. RLCS stands for Rocket League Championship Series, throughout this project RLCS refers to professional
 # rocket league.
 ```
 
 
-```python
-##Data Collection 
+```markdown
+##Data Collection
 #When looking into Rocket League, the most popular, well known way to get data is to use https://octane.gg/
 #This is a website which collects data from pro players games in different levels of events.
 #It is a very convenient website to go to, and apply different filters and sorts to visually get the data you want.
@@ -36,7 +36,7 @@
 #<script></script>
 #<script id="__NEXT_DATA__" type="application/json"></script>
 
-#The data I needed would not appear when I tried scraping it this way. 
+#The data I needed would not appear when I tried scraping it this way.
 #Below this HTML text I saw files ending in .js
 #When looking for a fix online I found that this website may be using "The page use JS to load the data dynamically"
 #I believe this is why I couldn't scrape the data I want
@@ -46,9 +46,9 @@
 #Stackoverflow link: https://stackoverflow.com/questions/52687372/beautifulsoup-not-returning-complete-html-of-the-page
 
 #When scrolling online to see how to get scrape from this website I found this website https://zsr.octane.gg/
-#The first text on this website is, "This API powers Octane.gg and is available for public use. 
+#The first text on this website is, "This API powers Octane.gg and is available for public use.
 #If you’re actively using the API, be sure to join our Discord and let us know what you’re working on!"
-#Some of the extensions for this website work as described on their main page, however there are also 
+#Some of the extensions for this website work as described on their main page, however there are also
 #Some that do not work and some that are not updated with the latest data
 
 #zsr.octane.gg link: https://zsr.octane.gg/
@@ -57,8 +57,8 @@
 #ShiftRLE, who are a very well known Rocket League News System.
 
 #I then went to octane.gg's discord to find out more information and ask someone for advice on how to use the API.
-#The discord was very abandoned, and had a news chat which said that this discord will no longer be updated and 
-#people should join the ShiftRLE discord instead. I then went there to see they had an API chat, this chat however was 
+#The discord was very abandoned, and had a news chat which said that this discord will no longer be updated and
+#people should join the ShiftRLE discord instead. I then went there to see they had an API chat, this chat however was
 #restricted to a few people, so I could not type and the only chats in this server were varied memes and emojis
 
 #ShiftRLE link: https://www.shiftrle.gg/
@@ -69,7 +69,7 @@
 #When I typed in on kaggle I found a dataset for Rocket League Championship Series 2021-2022. When examining, this dataset
 #I found it was a dataset with very up-to-date info on players and how they did in specific games
 #This was the CSV I ended up using in the next step
-#Overall this process took me a days worth of work between trying out code, running it, trying to fix errors, 
+#Overall this process took me a days worth of work between trying out code, running it, trying to fix errors,
 #looking for a fix online, reading pages and going through discords
 
 #Kaggle link: https://www.kaggle.com/datasets/dylanmonfret/rlcs-202122
@@ -414,7 +414,7 @@ for column in columns:
     print(column)
 
 #From the data the last few columns dealing with camera, steering, car, and platform are all subjective
-#These are setting that the player chooses and are very arbitrary 
+#These are setting that the player chooses and are very arbitrary
 #The only 2 that aren't completely arbitrary are platform and car
 #Different cars have different hitboxes, which technically can affect performance.
 #However players can choose their car, and will choose cars which gives them the best performance
@@ -640,7 +640,7 @@ for column in columns:
 
 ```python
 #Something that can be noticed is that most columns have 1100 Nulls with advanced_rating having 2 and team_region having 117
-#This probably means there are 1100 rows which are missing a very large amount of data. These columns will only make 
+#This probably means there are 1100 rows which are missing a very large amount of data. These columns will only make
 #calculations with these columns later on more difficult. Also ~1500 rows data is not much compared to the entire ~100,000 rows for the entire dataframe
 
 #drop all na value rows
@@ -1080,11 +1080,11 @@ display(major_table)
 ```python
 from bs4 import BeautifulSoup
 import numpy as np
-#Table includes ids from https://zsr.octane.gg/, player_id and player_tag are included, 
+#Table includes ids from https://zsr.octane.gg/, player_id and player_tag are included,
 #however team_id is provided but no team_name
 
 #This was my first attempt at trying to make a column of the team that player is on
-#I first made the statements seperate and split them up. I got the website link, them turned it to a string and 
+#I first made the statements seperate and split them up. I got the website link, them turned it to a string and
 #found the substring where my team's name is. I used a function to call them in the lambda call.
 #However this was way too slow
 
@@ -1117,7 +1117,7 @@ for i in range(len(team_ids)):
     index_end = soup.find("\"",index_start)
     #Add to dict
     team_id_dict[str_id] = soup[index_start:index_end]
-    
+
 #Replace old team_id as new team names
 major_table["team_id"] = major_table["team_id"].apply(lambda cell: team_id_dict[cell])
 
@@ -1467,8 +1467,8 @@ for curr_id in game_ids:
     index_end = soup.find("\"",index_start)
     #Add substring to dict
     game_id_dict[str_id] = soup[index_start:index_end]
-    
-#.apply() works significantly faster than loops 
+
+#.apply() works significantly faster than loops
 major_table["date"] = major_table["game_id"].apply(lambda cell: game_id_dict[cell])
 ```
 
@@ -1808,10 +1808,10 @@ display(major_table)
 
 
 ```python
-#If you look at the table above, something to notice is that the game_id for the first 5 and last 5, each set has their own 
-#same game_id. This makes sense in that pro league game of Rocket League is always 3v3, so there are 6 people in a row 
+#If you look at the table above, something to notice is that the game_id for the first 5 and last 5, each set has their own
+#same game_id. This makes sense in that pro league game of Rocket League is always 3v3, so there are 6 people in a row
 #playing in the same match. First 3 are one team, next 3 are the other team.
-#This game_id goes to a link on https://zsr.octane.gg/ , however there is too much information to process, 
+#This game_id goes to a link on https://zsr.octane.gg/ , however there is too much information to process,
 #some of it is are the same columns in major_table for the team but a lot of it is just repeated for the players data too.
 #In the future, if I need information from these game_ids, I can go back but for now I can make a new column giving each
 #game_id a number.
@@ -1824,7 +1824,7 @@ j = 0
 for curr_id in game_ids:
     game_id_dict[curr_id] = j
     j = j +1
-    
+
 #Make a new column of game index based on game_id
 major_table["game"] = major_table["game_id"].apply(lambda cell: game_id_dict[cell])
 #Reorder the columns so game is first
@@ -2154,7 +2154,7 @@ display(major_table)
 len(major_table) / 6
 
 #This is weird because each game should have 6 players, so you would expect the total number of rows should be divisible
-#by 6. I suspect when droping NULLs, some people in a match had missing data while others were fine. 
+#by 6. I suspect when droping NULLs, some people in a match had missing data while others were fine.
 #So some people were dropped in the same match
 
 ```
@@ -2181,15 +2181,15 @@ len(major_table) / 6
 #    else:
 #        print(i)
 
-#This was my first thought of how to see which match was out of place. Something I learned over this project 
-#was that loops are nearly unusable when working with data on this scale. No matter how simple the loop is, going over 
+#This was my first thought of how to see which match was out of place. Something I learned over this project
+#was that loops are nearly unusable when working with data on this scale. No matter how simple the loop is, going over
 #the entire dataframe is way to slow.
 
 lst = []
 #Every 6 entries are the same game, so make a list where the i repeats 6 times before incrementing i
 for i in range(int(len(major_table) / 6)):
     lst.extend([i] * 6)
-    
+
 
 temp_lst = major_table["game"]  
 #make lists the same size as each other
@@ -6860,7 +6860,7 @@ j = 0
 for curr_id in game_ids:
     game_id_dict[curr_id] = j
     j = j +1
-    
+
 #Make a new column of game index based on game_id
 major_table["game"] = major_table["game_id"].apply(lambda cell: game_id_dict[cell])
 display(major_table)
@@ -6869,7 +6869,7 @@ display(major_table)
 lst = []
 for i in range(int(len(major_table) / 6)):
     lst.extend([i] * 6)
-    
+
 
 temp_lst = major_table["game"]  
 #make lists the same size as each other
@@ -9561,7 +9561,7 @@ j = 0
 for curr_id in game_ids:
     game_id_dict[curr_id] = j
     j = j +1
-    
+
 #Make a new column of game index based on game_id
 major_table["game"] = major_table["game_id"].apply(lambda cell: game_id_dict[cell])
 major_table = major_table.drop(columns = ["index"])
@@ -10251,7 +10251,7 @@ print(count)
 
 
 ```python
-#This game is the only one where there is a missing row for one person, and the other team and their own team is recorded. 
+#This game is the only one where there is a missing row for one person, and the other team and their own team is recorded.
 #Lets look at this game then remove it.
 ```
 
@@ -10766,7 +10766,7 @@ len(major_table)/3
 ```python
 #Something that can be useful later on is making a table for entire team, rather than for each individual player. We can then run some classifier to
 #use the data to determine if a team wins or loses. The goal column is redundant, because whoever gets more goals will end up the winner. There
-#are a few other columns similarly, such as advanced_mvp, because the winner will always have the mvp and 
+#are a few other columns similarly, such as advanced_mvp, because the winner will always have the mvp and
 #core_assists, because more assists equates to more goals
 
 #First lets make the table, then later on we can change this table to how we need it
@@ -10776,7 +10776,7 @@ len(major_table)/3
 #for curr_id in game_ids:
     #blue_team = major_table[(major_table.game_id == curr_id) & (major_table.color == "blue")]
     #orange_team = major_table[(major_table.game_id == curr_id) & (major_table.color == "orange")]
-    
+
 #This takes a long time to run, will continue with the project and come back if wanted
 ```
 
@@ -11942,7 +11942,7 @@ major_table.cov()
 
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
-  
+
 #First copy the table
 deep = major_table.copy()
 #Drop date because it messes up the next line
@@ -19729,10 +19729,10 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):  
 #whereas core_shooting_percentage vs core_goals has a cov of .77, this makes sense because you can shoot the ball and miss the goal a lot,
 #but a high shooting percentage means you have at least one goal, if not more
 
-#Why standardization helps: 
+#Why standardization helps:
 #https://www.edq.com/blog/why-data-standardization-is-important/#:~:text=Data%20standardization%20helps%20improve%20the,easy%20for%20businesses%20to%20use.
 
-#Something that personally interested me was that boost amount correlated with time on the ground, low air, and high air respectively with 
+#Something that personally interested me was that boost amount correlated with time on the ground, low air, and high air respectively with
 #0.798026 0.789755 0.532228. This interested me because to spend time high in the air, you need to use lots of boost,
 ```
 
@@ -19754,9 +19754,9 @@ print("intercept: " + str(b))
 
 
 
-    
+
 ![png](output_32_1.png)
-    
+
 
 
 
@@ -19776,9 +19776,9 @@ print("intercept: " + str(b))
 
 
 
-    
+
 ![png](output_33_1.png)
-    
+
 
 
 
@@ -19794,7 +19794,7 @@ print("intercept: " + str(b))
 
 
 ```python
-#Boosting is important, in that it keeps your momentum and speed up, so you can move around the field efficently and make plays. 
+#Boosting is important, in that it keeps your momentum and speed up, so you can move around the field efficently and make plays.
 #Goals and saves directly provide score, but maybe boost can be related with score
 
 #Making a scatter plot with a line of best fit
@@ -19813,9 +19813,9 @@ print("intercept: " + str(b))
 
 
 
-    
+
 ![png](output_36_1.png)
-    
+
 
 
 
@@ -19836,9 +19836,9 @@ print("intercept: " + str(b))
 
 
 
-    
+
 ![png](output_37_1.png)
-    
+
 
 
 
@@ -19858,9 +19858,9 @@ print("intercept: " + str(b))
 
 
 
-    
+
 ![png](output_38_1.png)
-    
+
 
 
 
@@ -19880,25 +19880,25 @@ print("intercept: " + str(b))
 
 
 
-    
+
 ![png](output_39_1.png)
-    
+
 
 
 
 ```python
 #There is a significantly higher coorelation between goals scored and advanced_rating, rather than saves made and advanced_rating.
-#This makes sense in that a goal scored is very important, and is required to win, where as a save only makes it more 
+#This makes sense in that a goal scored is very important, and is required to win, where as a save only makes it more
 ```
 
 
 ```python
 ##Brief Description of RLCS
-#RLCS has a format of 3 majors and a world Championship. The best teams from 3 majors will be allowed to the world championship. RLCS is a global esport, with 
-#regions, North America, Europe, South America, Africa/Middle East, Asia, and Austrialia. It is impossible for people in Europe and Australia to play against 
-#each other due to the latency, because the physical distance is so far. A link is provided on why location affects latency. To solve this, RLCS makes 
-#it so that for ever major there are 3 regional events. All the teams for each region compete among themselves, the best teams after 3 events will go to the 
-#major. Regions such as North America and Europe have more developed teams, and as such have more slots for the major. The major is an in person event, 
+#RLCS has a format of 3 majors and a world Championship. The best teams from 3 majors will be allowed to the world championship. RLCS is a global esport, with
+#regions, North America, Europe, South America, Africa/Middle East, Asia, and Austrialia. It is impossible for people in Europe and Australia to play against
+#each other due to the latency, because the physical distance is so far. A link is provided on why location affects latency. To solve this, RLCS makes
+#it so that for ever major there are 3 regional events. All the teams for each region compete among themselves, the best teams after 3 events will go to the
+#major. Regions such as North America and Europe have more developed teams, and as such have more slots for the major. The major is an in person event,
 #where teams that qualify all meet and play in person. A link is provided on the RLCS format.
 
 #Latency: https://www.cloudways.com/blog/how-server-location-affects-latency/
@@ -19908,18 +19908,18 @@ print("intercept: " + str(b))
 #Something about me personally, is that my favorite team is SpaceStation Gaming. They are among the most popular RLCS teams, due to one of their players,
 #and the vast amount of rocket league creators signed to SpaceStation Gaming. Creators are youtubers, streamers, or anyone that makes rocket league content.
 #SpaceStation Gaming has signed many of these creators, including the second most subscribed rocket league youtuber. On the Pro team for SpaceStation Gaming,
-#there is a player whose name is Arsenal. He is also a youtuber, with 100,000s of subscribers, and has one of the most electric personalities. 
-#This combination has gained SpaceStation Gaming the popularity it has today. Unfortunately, recently many of these creators have left to join other 
-#organizations. Also a player, retals, who is also a popular player has been kicked from the team. 
+#there is a player whose name is Arsenal. He is also a youtuber, with 100,000s of subscribers, and has one of the most electric personalities.
+#This combination has gained SpaceStation Gaming the popularity it has today. Unfortunately, recently many of these creators have left to join other
+#organizations. Also a player, retals, who is also a popular player has been kicked from the team.
 
 
 #Goal
 #In the beginning of RLCS 21-22 season, which this dataframe is based off the roster of SSG(SpaceStation Gaming) was composed of Arsenal, Retals, and Sypical.
-#After SSG barely missed qualifying for the major, Sypical left the team to join Faze. At the time and even now Sypical is considered one of the best players 
-#in the world. To replace Sypical, SSG added Daniel, who had just turned old enough to play in RLCS, there is a age minimum of 16. Since joining, Daniel 
-#has proven to be one of the best players in the world also. However after 2 majors where SSG made it very far, semi-finals and quarter-finals, then losing 
+#After SSG barely missed qualifying for the major, Sypical left the team to join Faze. At the time and even now Sypical is considered one of the best players
+#in the world. To replace Sypical, SSG added Daniel, who had just turned old enough to play in RLCS, there is a age minimum of 16. Since joining, Daniel
+#has proven to be one of the best players in the world also. However after 2 majors where SSG made it very far, semi-finals and quarter-finals, then losing
 #before making playoffs, SSG made a change by dropping Retals. Retals played very well, however not worthy of best in the world like Daniel or Sypical.
-#The replacement was LJ for oxygen esports and Retals went to join Optic Gaming. A link is provided for details on past and present of SSG, Faze, Optic, 
+#The replacement was LJ for oxygen esports and Retals went to join Optic Gaming. A link is provided for details on past and present of SSG, Faze, Optic,
 #and Oxygen.
 
 #SSG Team: https://liquipedia.net/rocketleague/Spacestation_Gaming
@@ -19966,9 +19966,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_43_0.png)
-    
+
 
 
 
@@ -20001,21 +20001,21 @@ for ax in axs.flat:
 
 
 
-    
+
 ![png](output_45_1.png)
-    
+
 
 
 
 ```python
 #Something to note is Sypical's role as a player. He is a 3rd man, which means that he is usually the last person in an attack. In an attack a player commits
-#themselves to scoring the ball, if the fail they will need some time to recover and get boost before being able to defend. By being 3rd man, 
+#themselves to scoring the ball, if the fail they will need some time to recover and get boost before being able to defend. By being 3rd man,
 #Sypical has to defend by himself and buy time for his teammates to support him.
 
-#When Sypical was still on the team, his saves were very high, having to get games with 6 games, but usually was around the 2 to 3 range. 
+#When Sypical was still on the team, his saves were very high, having to get games with 6 games, but usually was around the 2 to 3 range.
 #On the other hand Arsenal are planted around the 1 to 2 range for saves during this period.
 
-#Since Sypical left, Arsenal and Retals have not seen a significant bump to saves, sill hovering around the 1 to 2 range. 
+#Since Sypical left, Arsenal and Retals have not seen a significant bump to saves, sill hovering around the 1 to 2 range.
 #However Sypical seems to have his role as 3rd man reduced, based on the downward trend of his frequency of saves.
 ```
 
@@ -20035,9 +20035,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_47_0.png)
-    
+
 
 
 
@@ -20068,15 +20068,15 @@ for ax in axs.flat:
 
 
 
-    
+
 ![png](output_49_1.png)
-    
+
 
 
 
 ```python
-#For Sypical, before leaving, much of his score is clustered between 0 and 1, with some between 1 and 2. From the describe above for advanced_rating, 
-#we know that the median is around .95, mean around .96, and a 75% of around 1.34. This means his performance was lower than the average player's. 
+#For Sypical, before leaving, much of his score is clustered between 0 and 1, with some between 1 and 2. From the describe above for advanced_rating,
+#we know that the median is around .95, mean around .96, and a 75% of around 1.34. This means his performance was lower than the average player's.
 #However after leaving, there are more clusters in in the 1 to 2 range, which shows he's performing like a world class player again.
 #For Arsenal and Retals, before Sypical left, they had performances in the upper 0 to lower 1 range however after Sypical left they are performing worse,
 #with many clusters in the 0 to 1 area, and only a few close to the 1 mark. Retals does have on average a cluster closer to 1 than Arsenal.
@@ -21715,7 +21715,7 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):  
 
 
 ```python
-#Sypical's mean goals increased, as did his assists and shooting percentage. However his saves per game decreased, due to a new role. Overall this has lead to 
+#Sypical's mean goals increased, as did his assists and shooting percentage. However his saves per game decreased, due to a new role. Overall this has lead to
 #around the same advance_rating, as when he left.
 ```
 
@@ -23349,7 +23349,7 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):  
 
 
 ```python
-#The mean and median shots for Arsenal increased, however his mean slightly decreased in goals. This lead to a lower shooting percentage, his saves also 
+#The mean and median shots for Arsenal increased, however his mean slightly decreased in goals. This lead to a lower shooting percentage, his saves also
 #decreased. Overall this caused his advanced_rating to fall. Some context is that in 2020, Arsenal was considered one of the top 5 players in the world,
 #seeing his performance get worse and no longer be considered among the top is quite sad for SSG fans.
 ```
@@ -24984,14 +24984,14 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):  
 
 
 ```python
-#Retals shots has increased slightly, however his goals did also increase in contrast to Arsenal. While his advanced_rating has fallen, 
+#Retals shots has increased slightly, however his goals did also increase in contrast to Arsenal. While his advanced_rating has fallen,
 #it is only slightly and still higher than Arsenal. Also his advanced_rating is still higher than the mean adavnced_rating, while Arsenal is lower.
 
 ```
 
 
 ```python
-#Overall Sypical made a good decision to leave SSG, he has improved in most metrics, where as the rest of SSG overall for Retals and Arsenal 
+#Overall Sypical made a good decision to leave SSG, he has improved in most metrics, where as the rest of SSG overall for Retals and Arsenal
 #have slightly declined. SSG should have tried to keep Sypical with the team and should have dropped Arsenal.
 
 #Next we will compare Daniel, who replaced Sypical, and Sypical. Overall Daniel is considered to have a very similar playstyle to Sypical, and
@@ -25030,9 +25030,9 @@ for ax in axs.flat:
 
 
 
-    
+
 ![png](output_62_1.png)
-    
+
 
 
 
@@ -25049,9 +25049,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_63_0.png)
-    
+
 
 
 
@@ -25068,9 +25068,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_64_0.png)
-    
+
 
 
 
@@ -26703,7 +26703,7 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 ```python
 #Daniel overall has less goals than Sypical, however the median is the same. What makes Daniel shine though is that his mean saves is ~.5 higher than Sypical's
 #Sypical's median saves is 1, while Daniel's is 2. However Sypical's shooting percentage is higher than Daniel's. From the chart above, we can see
-#that goals, which equates to shooting percentage has a higher coorelation with advanced rating than saves. This explains why the mean of Daniel's 
+#that goals, which equates to shooting percentage has a higher coorelation with advanced rating than saves. This explains why the mean of Daniel's
 #advanced rating is lower than Sypical's.
 
 #Daniel and Sypical are often compared to each other in playstyle and in role, with both players playing with the same team at different points in time,
@@ -26735,9 +26735,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_69_0.png)
-    
+
 
 
 
@@ -26754,9 +26754,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_70_0.png)
-    
+
 
 
 
@@ -26773,9 +26773,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_71_0.png)
-    
+
 
 
 
@@ -28406,8 +28406,8 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 
 
 ```python
-#Daniel and Sypical's mean goals are very similar, however Daniel's median goals is higher. Sypical has higher mean goals than Daniel, however both have the 
-#same 25%, media, and 75%. 
+#Daniel and Sypical's mean goals are very similar, however Daniel's median goals is higher. Sypical has higher mean goals than Daniel, however both have the
+#same 25%, media, and 75%.
 
 #Both players are very similar, both with slightly better mean goals than the average player, however both players have higher saves for mean and median.
 
@@ -28436,9 +28436,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_76_0.png)
-    
+
 
 
 
@@ -28455,9 +28455,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_77_0.png)
-    
+
 
 
 
@@ -28474,9 +28474,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_78_0.png)
-    
+
 
 
 
@@ -30107,8 +30107,8 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 
 
 ```python
-#Overall it seems that Firstkiller is overshadowing Sypical with Firstkiller's outstanding performance. His mean goals is the close to the 75% of all players. 
-#His mean saves is lower than the mean saves for all players. Overall with such a dominant amount of goals, his advanced rating is very high. 
+#Overall it seems that Firstkiller is overshadowing Sypical with Firstkiller's outstanding performance. His mean goals is the close to the 75% of all players.
+#His mean saves is lower than the mean saves for all players. Overall with such a dominant amount of goals, his advanced rating is very high.
 #His mean advanced rating is close to the 75% of all players, whereas Sypical's mean advanced rating is close to the mean of all players.
 ```
 
@@ -30153,9 +30153,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_84_0.png)
-    
+
 
 
 
@@ -30176,9 +30176,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_85_0.png)
-    
+
 
 
 
@@ -30199,9 +30199,9 @@ for ax in axs.flat:
 ```
 
 
-    
+
 ![png](output_86_0.png)
-    
+
 
 
 
@@ -41236,7 +41236,7 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 #Advanced Rating is an overall rating of a player's performance. It is convienent because it considers all factors and variables to determine the rating.
 #If we can use multiple Spearman's Test to find the strength and direction of a relationship between some chosen variables, and advanced_rating.
 
-#Then with this information we can find out the variables with the highest strength and direction to advanced_rating and consider those variables as the 
+#Then with this information we can find out the variables with the highest strength and direction to advanced_rating and consider those variables as the
 #"most important". With an idea of which variables are more important, we can then use this information to confirm or deny thoughts on the roster moves SSG
 #made. Such as based on Sypical's performance should they have tried to keep him, or which free agent would have been the best pick up, and was Lj among the
 #top of those free agents?
@@ -41434,31 +41434,31 @@ print("3. Arsenal: " + str(after_arsenal["core_shooting_percentage"].mean()))
     1. Sypical: 0.6704545454545454
     2. Retals: 0.6590909090909091
     3. Arsenal: 0.6022727272727273
-    
+
     core_goals after Sypical left
     1. Sypical: 0.7808219178082192
     2. Retals: 0.7088122605363985
     3. Arsenal: 0.5862068965517241
-    
+
     -------------------------------
-    
+
     advanced_goal_participation before Sypical left
     1. Sypical: 49.92424242424242
     2. Retals: 48.83116883116884
     3. Arsenal: 46.66396103896104
-    
+
     advanced_goal_participation after Sypical left
     1. Sypical: 56.72646227440747
     2. Retals: 53.881590950556465
     3. Arsenal: 44.61594599525635
-    
+
     -------------------------------
-    
+
     core_shooting_percentage before Sypical left
     1. Retals: 24.66179653679654
     2. Arsenal: 21.6017316017316
     3. Sypical: 21.55844155844156
-    
+
     core_shooting_percentage after Sypical left
     1. Sypical: 25.02609262883236
     2. Retals: 23.27951103813173
@@ -41468,7 +41468,7 @@ print("3. Arsenal: " + str(after_arsenal["core_shooting_percentage"].mean()))
 
 ```python
 #Overall both before and after Sypical left, he has proven in the 3 most important metrics for advanced rating that he is the best out of the 3. Sypical was
-#able to leave and still performs better than Arsenal and Retals shows that leaving was a good move, he has given himself the opportunity to find better 
+#able to leave and still performs better than Arsenal and Retals shows that leaving was a good move, he has given himself the opportunity to find better
 #teammates. On the other hand Arsenal and Retals have gotten worse in most metrics after Sypical left.
 ```
 
@@ -41510,21 +41510,21 @@ print("2. Sypical: " + str(Sypical["core_saves"].mean()))
     core_goals
     1. Sypical: 0.7808219178082192
     2. Daniel: 0.685823754789272
-    
+
     -------------------------------
-    
+
     advanced_goal_participation
     1. Sypical: 56.72646227440747
     2. Daniel: 53.81134829410692
-    
+
     -------------------------------
-    
+
     core_shooting_percentage
     1. Sypical: 25.02609262883236
     2. Daniel: 21.59779237365444
-    
+
     -------------------------------
-    
+
     core_saves
     1. Daniel: 1.8237547892720307
     2. Sypical: 1.365296803652968
@@ -41533,7 +41533,7 @@ print("2. Sypical: " + str(Sypical["core_saves"].mean()))
 
 ```python
 #Overall in the metrics which are most highly coorelated with advanced_rating Sypical shines over Daniel. However when factoring in saves, we can see a huge
-#gap which demonstrates the 2 different roles both players play. 
+#gap which demonstrates the 2 different roles both players play.
 ```
 
 
@@ -41585,9 +41585,9 @@ print("5. Arsenal: " + str(Arsenal["core_shooting_percentage"].mean()))
     4. Mist: 0.6436363636363637
     5. Noly: 0.5907590759075908
     5. Arsenal: 0.5902578796561605
-    
+
     -------------------------------
-    
+
     advanced_goal_participation
     1. ApparentlyJack: 56.645735217163754
     2. Lj: 56.09068627450979
@@ -41595,9 +41595,9 @@ print("5. Arsenal: " + str(Arsenal["core_shooting_percentage"].mean()))
     4. Noly: 53.51760176017602
     5. Retals: 52.60813207804613
     5. Arsenal: 45.13235093464321
-    
+
     -------------------------------
-    
+
     core_shooting_percentage
     1. ApparentlyJack: 24.70870399441828
     2. Lj: 23.755835667600365
@@ -41611,7 +41611,7 @@ print("5. Arsenal: " + str(Arsenal["core_shooting_percentage"].mean()))
 ```python
 #In 2 of the 3 metrics Retals and Lj are neck and neck for #2/3 alternating for who is 2 and 3, however for advanced_goal_participation Lj is 2,
 #whereas Retals is 5. Based on these 3 metrics it seems that SSG made a good move by dropping Retals for Lj, however this was not the best move they
-#could have made. In all 3 metrics ApparentlyJack is #1, and in core_goals he significantly higher than the rest of the choices SSG had. ApparentlyJack would 
+#could have made. In all 3 metrics ApparentlyJack is #1, and in core_goals he significantly higher than the rest of the choices SSG had. ApparentlyJack would
 #have been the best choice to join the team. Also Arsenal is last in all 3 metrics, and is significantly lower in advanced_goal_participation.
 
 ```
@@ -41625,15 +41625,15 @@ print("5. Arsenal: " + str(Arsenal["core_shooting_percentage"].mean()))
 #championship for RLCS 21-22 SSG failed to make playoffs. This lead SSG to make the subsequent change to the roster of dropping Retals, to replace him
 #Lj was signed to the team.
 
-#This dataframe gave us a metric called advanced_rating which is a cumulative rating generated for each player based on their performance for each game. 
+#This dataframe gave us a metric called advanced_rating which is a cumulative rating generated for each player based on their performance for each game.
 #This metric was chosen to judge players performances over periods of time because it encapsulates their overall performance for that period. We learned by
 #doing multiple Spearman's test that the 3 metrics most coorelated with advanced_rating are, core_goals, advanced_goal_participation, core_shooting_percentage.
 #By comapring players with these 3 metrics, we found that Sypical was the best player on SSG before he left. SSG should have tried to keep him more and instead
 #should have dropped Arsenal. Sypical however made the right move by leaving, allowing him to improve in all 3 metrics. SSG signed Daniel, who's stats are very
 #similar to Sypical's when he was with SSG. However with all 3 metrics, Sypical is still above Daniel. Daniel was a good signing by SSG, however Sypical
 #performed better when he was with SSG. As for the end of the RLCS 21-22 season, SSG made a good move by dropping retals and picking up Lj. Lj is slighlty
-#better than Retals overall in the 3 metrics, however that was not the best move SSG could have made. First, SSG should have dropped Arsenal over Retals, as 
-#Arsenal's performance in all 3 metrics was the worst out of all prospective free agents, including Retals. Then, SSG should have instead picked up 
+#better than Retals overall in the 3 metrics, however that was not the best move SSG could have made. First, SSG should have dropped Arsenal over Retals, as
+#Arsenal's performance in all 3 metrics was the worst out of all prospective free agents, including Retals. Then, SSG should have instead picked up
 #ApparentlyJack, who is number 1 in all 3 metrics and significantly higher than all free agents in core_goals.
 
 #The best team SSG should have gone for was to Drop Arsenal for Daniel
